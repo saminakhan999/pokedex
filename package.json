@@ -1,0 +1,17 @@
+{
+  "name": "pokemon_finder",
+  "version": "1.0.0",
+  "description": "Enter the name of a pokemon and find out its ID and appearance!",
+  "main": "backup.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently \"watchify ./static/js/index.js -o bundle.js\" \"http-server\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^7.0.0",
+    "watchify": "^4.0.0"
+  }
+}
