@@ -8,7 +8,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="static/css/style.css">
-    <script defer src='bundle.js'></script>
     <title>Pokemon Finder</title>
 </head>
 <body>
@@ -18,12 +17,12 @@
             <h1><span id="pokemon-name"></span></h1>
         </header>
         <section id="data">
-            <p><span id="descrip"></span><span id="pokemonid"> </span> </p>
-            <img id="picture" src="" />   
-        </section>
+            <p><span id="types"></span><span id="descrip"></span><span id="pokemonid"> </span></span></p>
+            <img id="picture" src=""/>   
+        </section>  
     
         <form>
-            <input id="inputt" placeholder="Enter pokemon" type="text">
+            <input type="text" id="inputt" placeholder="Enter pokemon" > 
             <input type = "submit" value="Search">
         </form>
         <section>
@@ -36,6 +35,7 @@
             </div>
             
           </div>
+          <script defer src='bundle.js'></script>
 </body>
 </html>
 

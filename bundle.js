@@ -1,9 +1,9 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 const { renderPokemonInfo} = require("./helpers")
-const input = document.getElementById("inputt");
+const inputt = document.getElementById("inputt");
 
 function getData(){
-    let inputValue = input.value.toLowerCase();
+    let inputValue = inputt.value.toLowerCase();
     fetch(`https://pokeapi.co/api/v2/pokemon/${inputValue}`)
         .then((response) => response.json())
         .then(renderPokemonInfo)
@@ -14,6 +14,8 @@ module.exports = { getData }
 
 
 },{"./helpers":3}],2:[function(require,module,exports){
+
+
 const { getData } = require('./apiHelpers');
 const { clearForm, renderName} = require('./helpers');
 
@@ -30,16 +32,29 @@ function submitHandler(e){
 module.exports = { submitHandler }
 
 },{"./apiHelpers":1,"./helpers":3}],3:[function(require,module,exports){
+
+
 function renderPokemonInfo(userData){
     const descrip = document.querySelector('#descrip')
-    descrip.textContent = ' Pokedex ID: ';
+    descrip.textContent = '   Pokedex ID: ';
     const count = userData.id;
     const span = document.getElementById('pokemonid');
     span.textContent = count;
     const picture = document.querySelector('#picture')
     const addPicture = userData.sprites.front_default
     picture.src = addPicture;
+    var pokemontype = () => {
+        types = [];
+        for (var i = 0; i < userData.types.length; i++) {
+          var type = userData.types[i].type.name.toUpperCase();
+          types.push(type);
+          return types;
+        }
+    }
+    const poketype = document.getElementById('types')
+    poketype.textContent = pokemontype();
     
+
 };
 
 

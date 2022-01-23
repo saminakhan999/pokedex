@@ -1,13 +1,26 @@
+
+
 function renderPokemonInfo(userData){
     const descrip = document.querySelector('#descrip')
-    descrip.textContent = ' Pokedex ID: ';
+    descrip.textContent = '   Pokedex ID: ';
     const count = userData.id;
     const span = document.getElementById('pokemonid');
     span.textContent = count;
     const picture = document.querySelector('#picture')
     const addPicture = userData.sprites.front_default
     picture.src = addPicture;
+    var pokemontype = () => {
+        types = [];
+        for (var i = 0; i < userData.types.length; i++) {
+          var type = userData.types[i].type.name.toUpperCase();
+          types.push(type);
+          return types;
+        }
+    }
+    const poketype = document.getElementById('types')
+    poketype.textContent = pokemontype();
     
+
 };
 
 

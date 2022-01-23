@@ -1,8 +1,8 @@
 const { renderPokemonInfo} = require("./helpers")
-const input = document.getElementById("inputt");
+const inputt = document.getElementById("inputt");
 
 function getData(){
-    let inputValue = input.value.toLowerCase();
+    let inputValue = inputt.value.toLowerCase();
     fetch(`https://pokeapi.co/api/v2/pokemon/${inputValue}`)
         .then((response) => response.json())
         .then(renderPokemonInfo)

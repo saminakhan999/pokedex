@@ -2,16 +2,31 @@
   "name": "pokemon_finder",
   "version": "1.0.0",
   "description": "Enter the name of a pokemon and find out its ID and appearance!",
-  "main": "backup.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "concurrently \"watchify ./static/js/index.js -o bundle.js\" \"http-server\""
+    "dev": "concurrently \"watchify ./static/js/index.js -o bundle.js\" \"http-server\"",
+    "test": "jest --watchAll",
+    "coverage": "jest --coverage"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^7.0.0",
+    "jest": "^27.4.7",
+    "jest-fetch-mock": "^3.0.3",
     "watchify": "^4.0.0"
-  }
+  },
+  "dependencies": {
+    "jest-environment-jsdom": "^27.4.6",
+    "jsdom": "^19.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saminakhan999/pokemon_finder.git"
+  },
+  "bugs": {
+    "url": "https://github.com/saminakhan999/pokemon_finder/issues"
+  },
+  "homepage": "https://github.com/saminakhan999/pokemon_finder#readme"
 }
